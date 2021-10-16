@@ -8,6 +8,8 @@ import {IoArrowBack} from 'react-icons/io5';
 import SubMenu from "./SubMenu";
 import {BiLogOut} from 'react-icons/bi';
 
+import { useHistory } from "react-router-dom";
+
 //ส่วนรอบปุ่ม
 const Nav=styled.div`
     background:#5B5B5B;
@@ -17,7 +19,6 @@ const Nav=styled.div`
     justify-content:flex-start;
     align-items: center;
     border-radius:0px 20px 20px 0px;
-
 `;
 
 //ไอคอนกดเปิดปิด
@@ -30,7 +31,6 @@ const NavIcon=styled(Link)`
     align-items: center;
     color:white;
    
-
 `;//แถบsidebar
 const SidebarNav = styled.nav`
     background:#545454;
@@ -43,24 +43,29 @@ const SidebarNav = styled.nav`
     left:${({ sidebar})=>(sidebar ? '0' :'-100%')};
     transition:350ms;
     z-index:10;
-
 `;
 
 const SideberWrap=styled.nav`
     width:100%;
-
 `;
 
 
 
-const StudentID="643xxxxx21"
+const StudentID="6400000021"
 const Name="Firstname Lastname"
 
 
-const Sidebar=()=>{
+const Sidebar=({Logout})=>{
     const[sidebar,setSidebar]=useState(false)
     const showSidebar=()=>setSidebar(!sidebar)
-    
+
+ 
+// const Logout = () =>{ 
+//     let history = useHistory();
+//     let path = `.src/App`; 
+//     history.push(path);
+// }
+        
     return(
         <>
             <Nav>
@@ -74,13 +79,14 @@ const Sidebar=()=>{
                         <IoArrowBack onClick={showSidebar}/>
                     </NavIcon>
                     <div className="UserProfile">
-                        {StudentID} {Name}
+                        {StudentID} 
+                        {Name}
                     </div>
                         {SidebarData.map((item,index)=>{
                                 return <SubMenu item={item} key={index}/>;
 
                         })}
-                    <div className="Logout"><BiLogOut/></div>
+                    <div className="Logout" onClick={Logout}><BiLogOut/></div>
 
                 </SideberWrap>
             </SidebarNav>

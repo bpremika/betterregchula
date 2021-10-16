@@ -1,9 +1,12 @@
+import React, { useState } from "react";
+import LoginForm from "./components/LoginForm";
+
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import{BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import RegisterLogo from "./components/RegisterLogo";
 import { render } from "react-dom";
-import React,{components} from 'react'
+import {components} from 'react'
 import Home from "./components/Home"
 import Registration from "./components/Registration";
 
@@ -24,8 +27,39 @@ const RegistrationResult=()=><div className="heading">ผลการลงท�
 const EducateResult=()=><div className="heading">ผลการเรียน</div>
 
 function App() {
+  const adminUser = {
+    name: 'Firstname Lastname',
+    stu_id: '6000000000',
+    password: '12345'
+  }
+  const [user, setUser] = useState({stu_id: ''});
+  const [error, setError] = useState('');
+
+  const Login = details => {
+    console.log(details);
+
+    if (details.stu_id === adminUser.stu_id && details.password === adminUser.password){
+      console.log('Login!');
+      setUser({
+        stu_id: details.stu_id,
+      })
+    }
+    else{
+      console.log('Not Match!');
+      setError('Not Match!');
+    }
+  }
+  const Logout = () => {
+    setUser({stu_id: ''});
+  }
+
+
+
+
+
       return (
-        <div classname="Appcontainer">
+        <div className="Appcontainer">
+          {(user.stu_id !=='') ? (
           <Router>
               <Route path="/Home" component={Home}/>
               <Route path="/information" component={information}/>
@@ -44,9 +78,14 @@ function App() {
               <Route path="/Subject/RegistrationResult" component={RegistrationResult}/>
               <Route path="/Subject/EducateResult" component={EducateResult}/>
               <RegisterLogo/>
-              <Sidebar/>
+              <Sidebar Logout={Logout}/>
+              
               <div className="bottombg"></div>
           </Router>
+          ) : (
+        <LoginForm Login={Login} error={error}/>
+      )}
+
         </div>
       );
     }
