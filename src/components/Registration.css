@@ -1,0 +1,70 @@
+/*body {
+    margin: 0;
+}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+.cardCtn {
+    background-color: none;
+    /*box-shadow: 1px 1px 7px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;*/
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    /*height: 100%;*/
+    /*margin: 24px;*/
+    padding: 40px 10px;
+}
+
+.card {
+    width: 80%;
+    margin: 20px;
+    padding: 10px 20px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 7px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-items: center;
+    flex-direction: row;
+    font-family: Kanit;
+}
+
+.card>div {
+    display: flex;
+    align-items: center;
+    align-content: space-around;
+}
+
+.btn1 {
+    border: none;
+    background-color: #3d4468;
+    border-radius: 14px;
+    color: #ffffff;
+    padding: 8px 26px;
+    cursor: pointer;
+    font-family: Kanit;
+}
+
+.btn1:hover {
+    background-color: #0e0f16;
+    transition-duration: 0.8s;
+}
+
+.basKetDiv{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.basKetDiv #totalchosen{
+    padding:20px;
+}
+
+.basKetDiv #buttonchosen{
+    color:#3d4468;
+    position: absolute;
+    bottom:47px;
+    cursor: pointer;
+}

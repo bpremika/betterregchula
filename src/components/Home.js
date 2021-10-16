@@ -11,9 +11,9 @@ const Home=()=>{
                     <div className="announcementbox">
                         <div id="announceicon"><IoMegaphone/></div>
                         <div id="announcetitle">ประกาศ/สิ่งที่ต้องทำ</div>
-                        
+                        </div>
                     </div>
-                </div>
+                
             </div>
 
         </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import LoginForm from "./components/LoginForm";
-
+import RegistConfirm from "./components/RegistConfirm";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import{BrowserRouter as Router,Switch,Route} from 'react-router-dom';
@@ -74,6 +74,7 @@ function App() {
               <Route path="/document/StudentPersonalRecords" component={StudentPersonalRecords}/>
               <Route path="/Subject" component={Subject}/>
               <Route path="/Subject/Registration" component={Registration}/>
+              <Route path="/Subject/RegistConfirm" component={RegistConfirm}/>
               <Route path="/Subject/Course Withdraw" component={CourseWithdraw}/>
               <Route path="/Subject/RegistrationResult" component={RegistrationResult}/>
               <Route path="/Subject/EducateResult" component={EducateResult}/>

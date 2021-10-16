@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+.table1 {
+    /*border-collapse: collapse;*/
+    width: 80%;
+    border-spacing: 15px;
+    font-family: Kanit;
+    table-layout: auto;
+}
+  
+.table1 > tr > th, td {
+    text-align: center;
+    padding: 8px;    
+    border-radius: 12px;    
+    box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+  
+.table1 > tr{
+    background: #FFFFFF;
+}
+  
+.table1 > tr > th{
+    background: #C4C4C4;
+}    
